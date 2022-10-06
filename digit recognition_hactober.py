@@ -24,7 +24,9 @@ plt.imshow(temp.reshape(28,28))
 
 y[95]
 
+from sklearn.model_selection import train_test_split
 
+xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.2,random_state=10)
 
 
 model.fit(xtrain,ytrain)
