@@ -10,12 +10,15 @@ Original file is located at
 from sklearn.datasets import fetch_openml
 
 mnist=fetch_openml('mnist_784')
+# Assign X and Y values
 
 x=mnist.data.values
 y=mnist.target
 
 temp=x[95]
 temp.shape
+
+# Importing matplotlib
 
 import matplotlib.pyplot as plt
 
@@ -24,10 +27,19 @@ plt.imshow(temp.reshape(28,28))
 
 y[95]
 
+# import train test split
+
 from sklearn.model_selection import train_test_split
 
 xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.2,random_state=10)
 
+#import logistic regression
+
+from sklearn.linear_model import LogisticRegression
+
+from matplotlib.scale import LogisticTransform
+
+model=LogisticRegression(multi_class='multinomial',solver='saga')
 
 model.fit(xtrain,ytrain)
 
