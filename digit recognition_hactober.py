@@ -11,7 +11,8 @@ from sklearn.datasets import fetch_openml
 
 mnist=fetch_openml('mnist_784')
 
-
+x=mnist.data.values
+y=mnist.target
 
 temp=x[95]
 temp.shape
