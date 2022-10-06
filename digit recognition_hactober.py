@@ -17,6 +17,9 @@ y=mnist.target
 temp=x[95]
 temp.shape
 
+import matplotlib.pyplot as plt
+
+plt.imshow(temp.reshape(28,28)) 
 
 
 y[95]
